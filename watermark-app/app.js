@@ -48,7 +48,6 @@ const prepareOutputFilename = (filename) => {
 };
 
 const startApp = async () => {
-  //Ask if user is ready
   const answer = await inquirer.prompt([
     {
       name: 'start',
@@ -58,10 +57,8 @@ const startApp = async () => {
     },
   ]);
 
-  // if answer is no, just quit the app
   if (!answer.start) process.exit();
 
-  //ask about input file and watermark type
   const options = await inquirer.prompt([
     {
       name: 'inputImage',
